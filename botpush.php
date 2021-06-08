@@ -74,13 +74,16 @@ $range = 'Class Data!A2:E';
 $response = $service->spreadsheets_values->get($spreadsheetId, $range);
 $values = $response->getValues();
 
+$excel_val = "";
+
 if (empty($values)) {
-    print "No data found.\n";
+    $excel_val .= "No data found.\n";
 } else {
-    print "Name, Major:\n";
+    $excel_val .= "Name, Major:\n";
     foreach ($values as $row) {
+        $excel_val .= $row[0].", ".$row[4]."\n";
         // Print columns A and E, which correspond to indices 0 and 4.
-        printf("%s, %s\n", $row[0], $row[4]);
+        //printf("%s, %s\n", $row[0], $row[4]);
     }
 }
 
@@ -100,7 +103,8 @@ $pushID =  array(
   "Uaf78a3809be375039177b2dcdbeb0fee"
 ); 
 
-$worldBot = "bot say hallo !!";
+//$worldBot = "bot say hallo !!";
+$worldBot = $excel_val;
 
 $httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient($access_token);
 $bot = new \LINE\LINEBot($httpClient, ['channelSecret' => $channelSecret]);
