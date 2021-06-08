@@ -103,8 +103,8 @@ $pushID =  array(
   "Uaf78a3809be375039177b2dcdbeb0fee"
 ); 
 
-//$worldBot = "bot say hallo !!";
-$worldBot = $excel_val;
+$worldBot = "bot say hallo !!";
+//$worldBot = $excel_val;
 
 $httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient($access_token);
 $bot = new \LINE\LINEBot($httpClient, ['channelSecret' => $channelSecret]);
