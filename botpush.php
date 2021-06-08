@@ -66,7 +66,7 @@ function getClient()
 
 
 // Get the API client and construct the service object.
-$client = getClient();
+/*$client = getClient();
 $service = new Google_Service_Sheets($client);
 
 // Prints the names and majors of students in a sample spreadsheet:
@@ -88,6 +88,9 @@ if (empty($values)) {
         //printf("%s, %s\n", $row[0], $row[4]);
     }
 }
+
+
+*/
 
 
 /****************************
