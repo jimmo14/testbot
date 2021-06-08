@@ -9,6 +9,8 @@ if (php_sapi_name() != 'cli') {
     throw new Exception('This application must be run on the command line.');
 }
 
+$excel_val = "test test test ";
+
 /**
  * Returns an authorized API client.
  * @return Google_Client the authorized client object
@@ -64,7 +66,7 @@ function getClient()
 
 
 // Get the API client and construct the service object.
-$client = getClient();
+/*$client = getClient();
 $service = new Google_Service_Sheets($client);
 
 // Prints the names and majors of students in a sample spreadsheet:
@@ -74,7 +76,7 @@ $range = 'Class Data!A2:E';
 $response = $service->spreadsheets_values->get($spreadsheetId, $range);
 $values = $response->getValues();
 
-$excel_val = "";
+
 
 if (empty($values)) {
     $excel_val .= "No data found.\n";
@@ -85,7 +87,7 @@ if (empty($values)) {
         // Print columns A and E, which correspond to indices 0 and 4.
         //printf("%s, %s\n", $row[0], $row[4]);
     }
-}
+}*/
 
 
 /****************************
