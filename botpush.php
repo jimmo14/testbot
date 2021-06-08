@@ -10,13 +10,25 @@ $channelSecret = '31d037ba1d9d1829c72f810240fc1f75';
 
 $pushID = 'Uaf78a3809be375039177b2dcdbeb0fee';
 
+$pushID =  array(
+  "Uaf78a3809be375039177b2dcdbeb0fee", 
+  "Uaf78a3809be375039177b2dcdbeb0fee", 
+  "Uaf78a3809be375039177b2dcdbeb0fee"
+); 
+
+
+
 $httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient($access_token);
 $bot = new \LINE\LINEBot($httpClient, ['channelSecret' => $channelSecret]);
 
 $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder('hello world');
-$response = $bot->pushMessage($pushID, $textMessageBuilder);
 
-echo $response->getHTTPStatus() . ' ' . $response->getRawBody();
+for($i=0;$i<count($pushID);$i++){
+  $response = $bot->pushMessage($pushID[$i], $textMessageBuilder);
+  echo $response->getHTTPStatus() . ' ' . $response->getRawBody();
+}
+
+
 
 
 
