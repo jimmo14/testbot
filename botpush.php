@@ -1,7 +1,6 @@
 <?php
 
 
-
 require "vendor/autoload.php";
 
 
@@ -9,13 +8,14 @@ if (php_sapi_name() != 'cli') {
     throw new Exception('This application must be run on the command line.');
 }
 
-$excel_val = "test test test ";
+
+//$excel_val = "test test test ";
 
 /**
  * Returns an authorized API client.
  * @return Google_Client the authorized client object
  */
-function getClient()
+/*function getClient()
 {
     $client = new Google_Client();
     $client->setApplicationName('Google Sheets API PHP Quickstart');
@@ -63,7 +63,7 @@ function getClient()
     }
     return $client;
 }
-
+*/
 
 // Get the API client and construct the service object.
 /*$client = getClient();
