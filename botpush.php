@@ -81,7 +81,7 @@ if (empty($values)) {
 } else {
     $excel_val .= "Name, Major:\n";
     foreach ($values as $row) {
-        $excel_val .= $row[0].", ".$row[4]."\n";
+        $excel_val .= $row[0];
         // Print columns A and E, which correspond to indices 0 and 4.
         //printf("%s, %s\n", $row[0], $row[4]);
     }
