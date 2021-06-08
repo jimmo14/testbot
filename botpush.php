@@ -4,18 +4,18 @@
 require "vendor/autoload.php";
 
 
-/*if (php_sapi_name() != 'cli') {
+if (php_sapi_name() != 'cli') {
     throw new Exception('This application must be run on the command line.');
-}*/
+}
 
 
-//$excel_val = "test test test ";
+$excel_val = "test test test ";
 
 /**
  * Returns an authorized API client.
  * @return Google_Client the authorized client object
  */
-/*function getClient()
+function getClient()
 {
     $client = new Google_Client();
     $client->setApplicationName('Google Sheets API PHP Quickstart');
@@ -63,10 +63,10 @@ require "vendor/autoload.php";
     }
     return $client;
 }
-*/
+
 
 // Get the API client and construct the service object.
-/*$client = getClient();
+$client = getClient();
 $service = new Google_Service_Sheets($client);
 
 // Prints the names and majors of students in a sample spreadsheet:
@@ -87,7 +87,7 @@ if (empty($values)) {
         // Print columns A and E, which correspond to indices 0 and 4.
         //printf("%s, %s\n", $row[0], $row[4]);
     }
-}*/
+}
 
 
 /****************************
@@ -105,8 +105,8 @@ $pushID =  array(
   "Uaf78a3809be375039177b2dcdbeb0fee"
 ); 
 
-$worldBot = "bot say hallo !!";
-//$worldBot = $excel_val;
+//$worldBot = "bot say hallo !!";
+$worldBot = $excel_val;
 
 $httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient($access_token);
 $bot = new \LINE\LINEBot($httpClient, ['channelSecret' => $channelSecret]);
